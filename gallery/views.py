@@ -1,36 +1,30 @@
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
-import datetime as dt
+from .models import Image
 # Create your views here.
-def welcome(request):
-    return render(request, 'welcome.html')
+def gallery(request):
+    # all_pics = Image.all_pics()
+    # print(all_pics)
+    return render(request, 'gallery.html')
 
-def gallery_of_day(request):
-    date = dt.date.today()
-    return render(request, 'all-gallery/today-gallery.html', {"date": date,})
+def search_results(request):
+    if 'image' in request.GET and request.GET['image']:
+        search_input = request.GET.get('image')
+        searched_images = Image.search_by_category(search_input)
+        message = f"{search_input}"
 
-def convert_dates(dates):
+        return render(request, 'search.html', {"message":message, "images":searched_images})
 
-    # Function that gets the weekday number for the date.
-    day_number = dt.date.weekday(dates)
+    else:
+        message = "Please input something in the search field"
+        return render(request, 'search.html', {'message':message})
 
-    days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday',"Sunday"]
+def display_images_categories(request):    
+    pics = Image.pic_categories()
 
-    # Returning the actual day of the week
-    day = days[day_number]
-    return day
+    return render(request, 'category.html', {"pics":pics}) 
 
-def past_days_gallery(request,past_date):
-    try:
-        # Converts data from the string Url
-        date = dt.datetime.strptime(past_date, '%Y-%m-%d').date()
+def display_images_locations(request):    
+    pics = Image.pic_locations()
 
-    except ValueError:
-        # Raise 404 error when ValueError is thrown
-        raise Http404()
-        assert False
-
-    if date == dt.date.today():
-        return redirect(gallery_of_day)
-
-    return render(request, 'all-gallery/past-gallery.html', {"date": date})
+    return render(request, 'location.html', {"pics":pics}) 
