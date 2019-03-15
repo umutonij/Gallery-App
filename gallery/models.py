@@ -1,7 +1,7 @@
 from django.db import models
 
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'pics/', null = True)
+    image = models.ImageField(upload_to = 'pics/')
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=100)
     category = models.ForeignKey('Category', on_delete = models.CASCADE, null='True', blank=True)

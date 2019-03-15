@@ -1,11 +1,12 @@
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
-from .models import Image
+from .models import Image,Category,Location
+
 # Create your views here.
 def gallery(request):
     all_pics = Image.all_pics()
     print(all_pics)
-    return render(request, 'gallery.html')
+    return render(request, 'gallery.html',{"picds":all_pics})
 
 def search_results(request):
     if 'image' in request.GET and request.GET['image']:
@@ -28,3 +29,4 @@ def display_images_locations(request):
     pics = Image.pic_locations()
 
     return render(request, 'location.html', {"pics":pics}) 
+

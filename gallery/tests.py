@@ -41,7 +41,7 @@ class ImageTestClass(TestCase):
 
 class CategoryTestClass(TestCase):
     def setUp(self):
-        self.travel = Category(name = 'travel')
+        self.travel = Category(name = 'Travel')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.travel, Category))
@@ -52,7 +52,7 @@ class CategoryTestClass(TestCase):
         self.assertTrue(len(categories) > 0)        
 
     def test_delete_method(self):
-        self.new_category = Category(name = 'food')
+        self.new_category = Category(name = 'Food')
         self.new_category.save_category()
         self.new_category.delete_category()
         categories = Category.objects.all()
