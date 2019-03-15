@@ -3,8 +3,8 @@ from django.http  import HttpResponse,Http404
 from .models import Image
 # Create your views here.
 def gallery(request):
-    # all_pics = Image.all_pics()
-    # print(all_pics)
+    all_pics = Image.all_pics()
+    print(all_pics)
     return render(request, 'gallery.html')
 
 def search_results(request):
