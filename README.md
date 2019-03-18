@@ -5,13 +5,15 @@ The personal gallery app is used to help the user to view different photos that 
 ### Author: By Jacqueline UMUTONI
 ## Description
 
-The personal gallery app is a web application that helps users to view different photos that they want. if the want they can search different photos based on the category, they will  
+The personal gallery app is a web application that helps users to view different photos that they want. if the want they can search different photos based on the category, photos will be displayed based on their category. you can even click on the photo of your choice and that photo will be expand with all the description,category,name and location. 
 
-Installation Requirements
-Python3.6
-Pip
-Virtualenv
-flask
+## Installation Requirements
+
+* Python3.6
+* Pip
+* Virtualenv
+* django
+
 Behavior Driven Development (BDD)
 (SPECs)The following is what my program should handle: The home page allows users to see various news sources sorted based on categories and select their preference. Once selected, a list of all articles for that news source with image description and time of posting article is shown. User can click on an article and read it fully from the news source. Users can additionally click cnn, or bbc or any other option on the navigation bar to see top headline articles. Known BUgs There are no known bugs yet.
 
