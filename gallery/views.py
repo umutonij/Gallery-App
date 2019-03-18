@@ -6,7 +6,7 @@ from .models import Image,Category,Location
 def gallery(request):
     all_pics = Image.all_pics()
     print(all_pics)
-    return render(request, 'gallery.html',{"picds":all_pics})
+    return render(request, 'gallery.html',{"pics":all_pics})
 
 def search_results(request):
     if 'image' in request.GET and request.GET['image']:

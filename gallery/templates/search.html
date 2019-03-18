@@ -3,8 +3,8 @@
 <div class="container">
 
   <div class="row">
-    {% if images%}
-      <h2>Found {{ images|length }} images of searched term {{message}}</h2>
+    {% if pics%}
+      <h2>Found {{ pics|length }} images of searched term {{message}}</h2>
     {% else %}
       <h2> Found 0 images for the search term {{message}}</h2>
     {% endif %}
@@ -14,10 +14,10 @@
   <div class="row">
 
   {% if images %}
-    {% for image in images %}
+    {% for pic in pics %}
     <div class="col-md-4">
         <img style=" margin-top: 20px; margin-bottom: 20px; width:350px; height:300px;" src="{{image.image.url}}" class="img-thumbnail" alt="Image" data-toggle="modal" data-target="#{{image.id}}">
-
+        <button class="btn btn-danger" onclick="copyUrl('{{pic.id}}-url')">Copy Image Url</button>
       <!-- Image Details modal -->
       {{image.name}}
       {{image.description}}
@@ -36,7 +36,7 @@
             </div>
             <div class="modal-footer">
               <input class="form-control input-lg" type="text" value="{{image.image.url}}" id="{{image.id}}-url">
-              <button class="btn btn-outline-info" onclick="copyUrl('{{image.id}}-url')">Copy Image Url</button>
+              
             </div>
           </div>
         </div>
