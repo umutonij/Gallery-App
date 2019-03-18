@@ -5,7 +5,7 @@
   <h1 style="color: darkcyan;" class="text-center"> Gallery</h1>
   <div class="row">
     {% for pic in pics %}
-    <div class="col-md-4">
+    <div class="col-md-4" >
       {{pic.name}}
         <img style=" margin-top: 20px; margin-bottom: 20px; width:350px; height:300px;" src="{{pic.image.url}}" class="img-thumbnail" alt="Image" data-toggle="modal" data-target="#{{pic.id}}">
         <button class="btn btn-danger" onclick="copyUrl('{{pic.id}}-url')" >Copy Link</button>
