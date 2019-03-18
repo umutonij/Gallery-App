@@ -8,7 +8,7 @@
     <div class="col-md-4">
       {{pic.name}}
         <img style=" margin-top: 20px; margin-bottom: 20px; width:350px; height:300px;" src="{{pic.image.url}}" class="img-thumbnail" alt="Image" data-toggle="modal" data-target="#{{pic.id}}">
-        <button class="btn btn-danger" onclick="copyUrl('{{pic.id}}-url')" >Copy Image Url</button>
+        <button class="btn btn-danger" onclick="copyUrl('{{pic.id}}-url')" >Copy Link</button>
         <input   value="{{pic.image.url}}" id="{{pic.id}}-url" >
         
         <div class="modal fade" id="{{pic.id}}" tabindex="-1" role="dialog" aria-labelledby="imageTitle" aria-hidden="true">
