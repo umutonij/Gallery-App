@@ -25,7 +25,7 @@ The personal gallery app is a web application that helps users to view different
 * psycopg2==2.7.7
 * pytz==2018.9
 
-you can even check my application through : https://pytho-news-highlight.herokuapp.com/
+you can even check my application through : https://appgallery1.herokuapp.com/
 
 ## Support and contact details
 
